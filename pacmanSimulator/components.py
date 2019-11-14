@@ -18,14 +18,14 @@ class Pacman():
 ##########Pacman Class END##########
 
 ##########Map Class Start##########
-class Map:
+class Map():
 	def __init__(self,width,height):
-		self.width = width
-		self.height = height
+		self.width = width-1
+		self.height = height-1
 
 	def isValidPos(self,newLocation):
 		x,y = newLocation
-		if x > self.width or y > self.height:
+		if x>self.width or x<0 or y>self.height or y<0:
 			return False
 		else:
 			return True
