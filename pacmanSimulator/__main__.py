@@ -1,4 +1,4 @@
-import sys
+import os
 from pacmanSimulator.components import Pacman, Map, Game
 from pacmanSimulator.helperFunctions import *
 
@@ -33,8 +33,9 @@ def startGame():
 			getInput = input()
 		else:
 			pacman = game.getPacman()
-			print(pacman.getLocation())
-			print(degreeToDirection(pacman.getDirection()) + "\n")
+			x,y = pacman.getLocation()
+			print(str(x)+","+str(y)+","+\
+				degreeToDirection(pacman.getDirection())+"\n")
 
 if __name__ == '__main__':
     startGame()

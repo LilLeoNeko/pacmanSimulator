@@ -10,6 +10,7 @@ def directionToDegree(direction):
 		return 180
 	if direction == "EAST":
 		return 0
+	return -1
 
 def degreeToDirection(degree):
 	if degree == 90:
@@ -20,9 +21,12 @@ def degreeToDirection(degree):
 		return "WEST"
 	if degree == 0:
 		return "EAST"
+	return "ERROR"
 
 def isPlaceValid(tempString, gameMap):
 	getInput = tempString.split()
+	if len(getInput) ==0:
+		return False
 	if getInput[0]!="PLACE" or len(getInput)<=1 or len(getInput)>2:
 		return False
 	else:
